@@ -5,6 +5,9 @@ Tenor scrapping with BeautifulSoup4. Tested on python3.
 | ------- | :------: |
 | **3.8.3** | Tested   |
 
+## dependencies
+- [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/)
+- [Requests](https://pypi.org/project/requests/)
 
 ## usage
 
