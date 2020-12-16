@@ -12,5 +12,6 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/suarasiy/tenorscrap",
-    install_requires=["beautifulsoup4", "requests"]
+    install_requires=["beautifulsoup4", "requests"],
+    packages=["tenorscrap"]
 )
