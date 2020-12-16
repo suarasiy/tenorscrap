@@ -3,7 +3,7 @@ Tenor scrapping with BeautifulSoup4. Tested on python3.
 
 | Version | Status   |
 | ------- | :------: |
-| `3.8.3` | Tested   |
+| **3.8.3** | Tested   |
 
 
 ## usage
@@ -39,7 +39,7 @@ result = search.result(mode="dict")
 <details>
 <summary>📃 Example Result</summary>
 
-```json
+```
 [{'src': 'https://media.tenor.com/images/1995989c1b87f95e0b6889b6cb333e4a/tenor.gif',
   'width': '180',
   'height': '135',
