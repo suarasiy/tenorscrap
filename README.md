@@ -30,7 +30,7 @@ tenor = Tenor()
 #### **Search for tenor:**
 
 ```python
-search = tenor.search("spongebob squarepants", limit=3)
+tenor.search("spongebob squarepants", limit=3)
 ```
 
 #### **Getting DICT (default)**
@@ -38,13 +38,13 @@ search = tenor.search("spongebob squarepants", limit=3)
 By default the output is `list` and with `dict` structure inside. The result is `src`, `width`, `height`, `alt`, `style`, `url` tag format which all is default attrs in Tenor element tag.
 
 ```python
-result = search.result()
+result = tenor.result()
 ```
 
 **or**
 
 ```python
-result = search.result(mode="dict")
+result = tenor.result(mode="dict")
 ```
 
 <details>
