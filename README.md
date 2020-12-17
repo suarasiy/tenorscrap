@@ -50,6 +50,10 @@ result = tenor.result(mode="dict")
 <details>
 <summary>📃 Example Result</summary>
 
+```python
+print(result)
+```
+
 ```
 [{'src': 'https://media.tenor.com/images/1995989c1b87f95e0b6889b6cb333e4a/tenor.gif',
   'width': '180',
@@ -77,11 +81,15 @@ result = tenor.result(mode="dict")
 You can get `json` output by adding parameter `mode="json"`.
 
 ```python
-result_json = search.result(mode="json")
+result_json = tenor.result(mode="json")
 ```
 
 <details>
 <summary>📃 Example Result</summary>
+
+```python
+print(result_json)
+```
 
 ```json
 [
