@@ -1,5 +1,12 @@
 # tenorscrap
+
 Tenor scrapping with BeautifulSoup4. Tested on python3.
+
+# installation
+
+```
+pip install git+https://github.com/suarasiy/tenorscrap
+```
 
 | Version | Status   |
 | ------- | :------: |
@@ -8,6 +15,7 @@ Tenor scrapping with BeautifulSoup4. Tested on python3.
 ## dependencies
 - [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/)
 - [Requests](https://pypi.org/project/requests/)
+- [lxml](https://pypi.org/project/lxml/)
 
 ## usage
 
