@@ -47,7 +47,7 @@ result = search.result()
 **or**
 
 ```python
-result = search.result(mode="json")
+result = search.result(mode="dict")
 ```
 
 <details>
