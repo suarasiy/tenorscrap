@@ -1,5 +1,8 @@
 # tenorscrap
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/suarasiy/tenorscrap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/suarasiy/tenorscrap/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/suarasiy/tenorscrap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/suarasiy/tenorscrap/context:python)
+
 Tenor scrapping with BeautifulSoup4. Tested on python3.
 
 # installation
@@ -30,7 +33,7 @@ tenor = Tenor()
 #### **Search for tenor:**
 
 ```python
-tenor.search("spongebob squarepants", limit=3)
+search = tenor.search("spongebob squarepants", limit=3)
 ```
 
 #### **Getting DICT (default)**
@@ -38,13 +41,13 @@ tenor.search("spongebob squarepants", limit=3)
 By default the output is `list` and with `dict` structure inside. The result is `src`, `width`, `height`, `alt`, `style`, `url` tag format which all is default attrs in Tenor element tag.
 
 ```python
-result = tenor.result()
+result = search.result()
 ```
 
 **or**
 
 ```python
-result = tenor.result(mode="dict")
+result = search.result(mode="json")
 ```
 
 <details>
@@ -81,14 +84,14 @@ print(result)
 You can get `json` output by adding parameter `mode="json"`.
 
 ```python
-result_json = tenor.result(mode="json")
+result = search.result(mode="json")
 ```
 
 <details>
 <summary>📃 Example Result</summary>
 
 ```python
-print(result_json)
+print(result)
 ```
 
 ```json

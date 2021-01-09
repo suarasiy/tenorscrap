@@ -3,6 +3,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
+
 class Tenor:
     url = ""
     result = ""
@@ -12,15 +13,29 @@ class Tenor:
 
     url_list = []
     result_list = []
+
     def __init__(self):
         pass
 
-    def search(self, tag, **kwargs):
-        limit = kwargs.get("limit", None)
+    class Result():
+        result_list = []
+        def __init__(self, result):
+            self.result_list = result
+
+        def result(self, mode: str = "dict"):
+            if mode.lower() == "dict":
+                print("get dict")
+                return self.result_list
+            elif mode.lower() == "json":
+                print("get json")
+                return json.dumps(self.result_list, indent=2, sort_keys=True)
+
+    def search(self, tag, limit: int = 3):
         tag = re.sub('[\!\@\#\$\%\^\&\*\(\)\_\-\=\+\`\~\." ]', '-', tag)
         self.tag = tag
         self.set_url()
         self.__set_result(limit)
+        return self.Result(self.result_list)
 
     def set_url(self):
         self.base_search = f"/search/{self.tag}-gifs"
@@ -63,12 +78,11 @@ class Tenor:
             if "{}/view".format(self.base_url) not in value:
                 del self.url_list[idx]
 
-    def result(self, **kwargs):
-        mode = kwargs.get("mode", "dict")
-        if mode.lower() == "dict":
-            return self.result_list
-        elif mode.lower() == "json":
-            return json.dumps(self.result_list, indent=2, sort_keys=True)
+    # def result(self, mode: str = "dict"):
+    #     if mode.lower() == "dict":
+    #         return self.result_list
+    #     elif mode.lower() == "json":
+    #         return json.dumps(self.result_list, indent=2, sort_keys=True)
     
     def __str__(self):
         return json.dumps(self.result_list, indent=2, sort_keys=True)
