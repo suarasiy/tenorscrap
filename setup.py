@@ -5,7 +5,7 @@ with open("README.md", "r") as file:
 
 setup(
     name="tenorscrap",
-    version="0.0.2",
+    version="0.0.3",
     author="siy",
     author_email="",
     description="Search gif in Tenor",

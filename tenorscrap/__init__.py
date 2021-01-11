@@ -24,13 +24,11 @@ class Tenor:
 
         def result(self, mode: str = "dict"):
             if mode.lower() == "dict":
-                print("get dict")
                 return self.result_list
             elif mode.lower() == "json":
-                print("get json")
                 return json.dumps(self.result_list, indent=2, sort_keys=True)
 
-    def search(self, tag, limit: int = 3):
+    def search(self, tag, limit: int = 3) -> list(result_list):
         tag = re.sub('[\!\@\#\$\%\^\&\*\(\)\_\-\=\+\`\~\." ]', '-', tag)
         self.tag = tag
         self.set_url()
@@ -48,14 +46,14 @@ class Tenor:
         self.giflist = soup.find("div", attrs={"class": "GifList"})
         return soup
     
-    def __get_list_url(self):
+    def __get_list_url(self) -> list(url_list):
         self.url_list.clear()
         urllist = self.giflist.find_all("a")
         [self.url_list.append(self.base_url + value.attrs["href"]) for value in urllist if "/search" not in value.attrs["href"]]
         self.__cleansing_view()
         return self.url_list
 
-    def __get_list_gif(self):
+    def __get_list_gif(self) -> list:
         Gif = self.giflist.find_all("div", attrs={"class": "Gif"})
         gif = [value.findChildren("img")[0].attrs for value in Gif]
         return gif
@@ -78,12 +76,6 @@ class Tenor:
             if "{}/view".format(self.base_url) not in value:
                 del self.url_list[idx]
 
-    # def result(self, mode: str = "dict"):
-    #     if mode.lower() == "dict":
-    #         return self.result_list
-    #     elif mode.lower() == "json":
-    #         return json.dumps(self.result_list, indent=2, sort_keys=True)
-    
     def __str__(self):
         return json.dumps(self.result_list, indent=2, sort_keys=True)
 
