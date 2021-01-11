@@ -81,6 +81,3 @@ class Tenor:
 
     def __call__(self):
         return json.dumps(self.result_list, indent=2, sort_keys=True)
-    
-    def __repr__(self):
-        return json.dumps(self.result_list, indent=2, sort_keys=True)
